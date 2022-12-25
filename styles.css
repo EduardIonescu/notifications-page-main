@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;800&display=swap');
+
+:root{
+    /* FONTS */
+
+    --font-family-jakarta: 'Plus Jakarta Sans', sans-serif;
+    --font-size-paragraph: 16px;
+    --font-size-mobile: 14px;
+    --font-weight-medium: 500;
+    --font-weight-extrabold: 800;
+
+    /* COLORS */
+
+    --primary-red: hsl(1, 90%, 64%);
+    --primary-blue: hsl(219, 85%, 26%);
+
+    --white: hsl(0, 0%, 100%);
+    --very-light-grayish-blue: hsl(210, 60%, 98%);
+    --light-grayish-blue-1: hsl(211, 68%, 94%);
+    --light-grayish-blue-2: hsl(205, 33%, 90%);
+    --grayish-blue: hsl(219, 14%, 63%);
+    --dark-grayish-blue: hsl(219, 12%, 42%);
+    --very-dark-blue: hsl(224, 21%, 14%);
+}
+
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-family-jakarta);
+    font-weight: var(--font-weight-medium);
+}
+
+html{
+    max-width:100vw;
+    min-height:100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--very-light-grayish-blue);
+}
+
+body{
+    max-width:730px;
+    background-color: var(--white); 
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:1rem 0;
+}
+header .title-notifications{
+    font-weight:var(--font-weight-extrabold); 
+}
+header .title-notifications .notifications-number{
+    background-color: var(--primary-blue);
+    color:var(--light-grayish-blue-1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight:var(--font-weight-extrabold);
+    font-size:1rem;;
+    height:1.5rem;
+    width:2rem;
+    border-radius:0.5rem;
+    margin-left:5px;
+    transform:translate(0, -4px);
+}
+header button.button-mark-all{
+    border:none;
+    background:none;
+    color:var(--dark-grayish-blue);
+    cursor:pointer;
+    transition: 0.3s ease;
+}
+
+main{
+    width:100%;
+}
+
+a{
+    text-decoration: none;
+    font-weight:var(--font-weight-extrabold);
+    transition: 0.2s ease;
+}
+
+article{
+    width:100%;
+    display: flex;
+    position: relative;
+    padding:1rem;
+    margin-bottom:0.5rem;
+}
+article img.image-profile{
+    width: 2.8rem;
+    height:2.6rem;
+    object-fit: contain;
+}
+article img.image-chess{
+    width:2.8rem;
+    height:2.8rem;
+    position: absolute;
+    right:1.2rem;
+    cursor:pointer;
+    top:1rem;
+}
+article .notification-message{
+    color: var(--dark-grayish-blue);
+}
+
+article .unread-icon{
+    display: inline-block;
+    width:0.5rem;
+    height:0.5rem;
+    border-radius:50%;
+    background-color: var(--primary-red);
+    transform: translate(2px, -1px);
+}
+
+article a.name{
+    color:var(--very-dark-blue);
+}
+
+article p.time-ago{
+    color:var(--grayish-blue);
+    margin-top:0.25rem;
+}
+article p.message{
+    padding:1rem;
+    color:var(--dark-grayish-blue);
+    border:1px solid var(--light-grayish-blue-1);
+    border-radius:0.2rem;
+    margin:0.5rem 0;
+    cursor:pointer;
+    transition: 0.3s ease;
+}
+
+article a.reaction-link{
+    color:var(--dark-grayish-blue);
+}
+article a.chess-club{
+    color:var(--primary-blue);
+}
+
+.unread{
+    background-color:var(--very-light-grayish-blue);
+    border-radius:0.4rem;
+}
+
+@media(max-width: 749px){
+    body{
+        padding:0.5rem 1rem
+    }
+
+    header{
+        margin-bottom:0.5rem;
+    }
+    header .title-notifications{
+        font-size:1.25rem;
+    }
+    header button.button-mark-all{
+        font-size:var(--font-size-mobile);
+    }
+
+    p{
+        font-size:var(--font-size-mobile);
+    }
+
+    article{
+        gap: 0.5rem;
+    }
+    article a.name{
+        margin-right:0.2rem;
+    }
+    article p.comment{
+        width:80%;
+    }
+}
+
+@media(min-width: 750px){
+    body{
+        padding:1rem 2rem 0 2rem;
+    }
+
+    header{
+        margin-bottom:1rem;
+    }
+    header .title-notifications{
+        font-size: 1.5rem;
+    }
+    header button.button-mark-all{
+        font-size:var(--font-size-paragraph);
+    }
+
+    article{
+        gap: 1rem;
+    }
+    article p.message:hover{
+        background-color:var(--light-grayish-blue-1);
+    }
+
+    a:hover, article a.name:hover, .button-mark-all:hover{
+        color:var(--primary-blue)!important;
+    }
+}
